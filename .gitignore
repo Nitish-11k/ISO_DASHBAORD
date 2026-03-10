@@ -1,0 +1,18 @@
+# Build artifacts
+*.iso
+tc_remaster/
+tc_remaster.old.*/
+iso_root/
+
+# Binaries
+tiny_splash
+webkit_wrapper_static
+app_bin/app
+
+# Logs
+*.log
+serial.log
+
+# Temporary / Scratch
+/tmp/
+.DS_Store
