@@ -5,10 +5,13 @@
 title-text: ""
 desktop-image: "background.png"
 terminal-font: "DejaVu Sans Bold 16"
+terminal-vga-font: "DejaVu Sans Bold 16"
+
+# (Fonts are already loaded by grub.cfg, so we just reference their names)
 
 # -- Title Label --
 + label {
-    top = 50
+    top = 10%
     left = 0
     width = 100%
     align = "center"
@@ -17,40 +20,29 @@ terminal-font: "DejaVu Sans Bold 16"
     color = "black"
 }
 
-# -- Menu Box (Table) --
+# -- Boot Menu (Boxed) --
 + boot_menu {
-    left = 20%
-    top = 150
-    width = 60%
-    height = 250
+    left = 25%
+    top = 22%
+    width = 50%
+    height = 35%
     item_font = "DejaVu Sans Bold 16"
     item_color = "black"
     selected_item_color = "white"
     item_height = 40
     item_padding = 10
-    item_spacing = 10
+    item_spacing = 8
     
-    # Selection Bar (Dark Blue from asset)
-    selected_item_pixmap_style = "assets/selected_bg_*.png"
+    # Border Box Around Menu
+    menu_pixmap_style = "menu_box_*.png"
     
-    # Border (Table Border from asset)
-    menu_pixmap_style = "assets/menu_box_*.png"
+    # Selected Highlighting (Dark Blue Background)
+    selected_item_pixmap_style = "selected_bg_*.png"
 }
 
-# -- Timeout Progress Bar (Progress) --
-+ progress_bar {
-    id = "__timeout__"
-    left = 20%
-    top = 420
-    width = 60%
-    height = 10
-    fg_color = "#000080"
-    bg_color = "light-gray"
-    border_color = "black"
-}
-
+# -- Help Text --
 + label {
-    top = 650
+    top = 75%
     left = 0
     width = 100%
     align = "center"
@@ -59,12 +51,26 @@ terminal-font: "DejaVu Sans Bold 16"
     color = "black"
 }
 
+# -- Boot Status Label --
 + label {
-    top = 700
+    top = 80%
     left = 0
     width = 100%
     align = "center"
     text = "Booting D-Secure OS..."
     font = "DejaVu Sans Bold 16"
     color = "black"
+}
+
+# -- Progress Bar (Timeout Indicator) --
++ progress_bar {
+    id = "__timeout__"
+    top = 85%
+    left = 25%
+    width = 50%
+    height = 20
+    bg_color = "lightgray"
+    fg_color = "darkblue"
+    border_color = "black"
+    show_text = false
 }
