@@ -1,0 +1,70 @@
+# D-Secure GRUB Theme
+# Author: Antigravity
+
+# -- General --
+title-text: ""
+desktop-image: "background.png"
+terminal-font: "DejaVu Sans Bold 16"
+
+# -- Title Label --
++ label {
+    top = 50
+    left = 0
+    width = 100%
+    align = "center"
+    text = "D-Secure Boot Menu"
+    font = "DejaVu Sans Bold 24"
+    color = "black"
+}
+
+# -- Menu Box (Table) --
++ boot_menu {
+    left = 20%
+    top = 150
+    width = 60%
+    height = 250
+    item_font = "DejaVu Sans Bold 16"
+    item_color = "black"
+    selected_item_color = "white"
+    item_height = 40
+    item_padding = 10
+    item_spacing = 10
+    
+    # Selection Bar (Dark Blue from asset)
+    selected_item_pixmap_style = "assets/selected_bg_*.png"
+    
+    # Border (Table Border from asset)
+    menu_pixmap_style = "assets/menu_box_*.png"
+}
+
+# -- Timeout Progress Bar (Progress) --
++ progress_bar {
+    id = "__timeout__"
+    left = 20%
+    top = 420
+    width = 60%
+    height = 10
+    fg_color = "#000080"
+    bg_color = "light-gray"
+    border_color = "black"
+}
+
++ label {
+    top = 650
+    left = 0
+    width = 100%
+    align = "center"
+    text = "Use ↑ ↓ to navigate, Enter to select"
+    font = "DejaVu Sans Bold 16"
+    color = "black"
+}
+
++ label {
+    top = 700
+    left = 0
+    width = 100%
+    align = "center"
+    text = "Booting D-Secure OS..."
+    font = "DejaVu Sans Bold 16"
+    color = "black"
+}
